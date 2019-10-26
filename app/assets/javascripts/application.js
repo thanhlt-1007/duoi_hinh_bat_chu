@@ -30,4 +30,23 @@ $(document).on('ready', function() {
       $(this).next('.js-answer-box').focus();
     }
   });
+
+  $('.js-btn-check').on('click', function() {
+    var modalQuestion = $(this).closest('.js-modal-question');
+    var answer = modalQuestion.data('answer');
+    var index = modalQuestion.data('index');
+    var userAnswer = '';
+
+    modalQuestion.find('.js-answer-box').each(function(index) {
+      userAnswer = userAnswer + $(this).html().trim();
+    });
+
+    if (userAnswer == answer) {
+      modalQuestion.modal('hide');
+
+      var box = $('.js-box[data-index="' + index + '"]');
+      var answerSrc = box.data('answer');
+      box.find('img').attr('src', answerSrc);
+    }
+  });
 });

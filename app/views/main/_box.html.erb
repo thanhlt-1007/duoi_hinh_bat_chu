@@ -1,3 +1,5 @@
-<div class="box" data-toggle="modal" data-target=".js-modal-question[data-index='<%= index %>']">
+<div class="box js-box"
+  data-index="<%= index %>" data-answer="<%= asset_url "answers/#{'%02d' % index}.png" %>"
+  data-toggle="modal" data-target=".js-modal-question[data-index='<%= index %>']">
   <%= image_tag "numbers/#{'%02d' % index}.png" %>
 </div>
