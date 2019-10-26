@@ -19,6 +19,9 @@
 
 $(document).on('ready', function() {
   $('.js-answer-box').keyup(function(event) {
+    var modalQuestion = $(this).closest('.js-modal-question');
+    modalQuestion.find('.js-text').addClass('hidden'); 
+
     var keyCode = event.keyCode;
     var A_KEY_CODE = 65;
     var Z_KEY_CODE = 90;
@@ -47,6 +50,11 @@ $(document).on('ready', function() {
       var box = $('.js-box[data-index="' + index + '"]');
       var answerSrc = box.data('answer');
       box.find('img').attr('src', answerSrc);
+    } else {
+      modalQuestion.find('.js-text').removeClass('hidden');
+      modalQuestion.find('.js-answer-box').each(function(index) {
+        $(this).html('');
+      });
     }
   });
 });
