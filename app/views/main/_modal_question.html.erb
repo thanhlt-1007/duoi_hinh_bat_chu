@@ -1,4 +1,5 @@
-<div class="modal modal-question fade js-modal-question" data-index="<%= index %>" role="dialog">
+<div class="modal modal-question fade js-modal-question" role="dialog"
+  data-index="<%= index %>" data-answer="<%= answer %>">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -12,8 +13,8 @@
         <div class="answer-boxes">
           <div class="answer-boxes-details">
             <% answer.length.times do |i| %>
-              <div class="answer-box" contenteditable="true">
-                <%= answer[i] %>
+              <div class="answer-box js-answer-box" contenteditable="true">
+                <%#= answer[i] %>
               </div>
             <% end%>
           </div>
@@ -21,7 +22,9 @@
       </div>
 
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-search"></span> Kiểm tra
+        </button>
       </div>
     </div>
   </div>

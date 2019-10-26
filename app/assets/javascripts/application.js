@@ -16,3 +16,18 @@
 //= require jquery
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(document).on('ready', function() {
+  $('.js-answer-box').keyup(function(event) {
+    var keyCode = event.keyCode;
+    var A_KEY_CODE = 65;
+    var Z_KEY_CODE = 90;
+
+    if (keyCode >= A_KEY_CODE && keyCode <= Z_KEY_CODE) {
+      var input = $(this).html();
+      $(this).html(input.toUpperCase());
+
+      $(this).next('.js-answer-box').focus();
+    }
+  });
+});
