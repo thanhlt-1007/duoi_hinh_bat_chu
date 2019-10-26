@@ -11,11 +11,16 @@
       <div class="row-box">
         <% 3.times do |col| %>
           <% index = row * 3 + col %>
-          <div class="box">
-            <%= image_tag "numbers/#{'%02d' % index}.png" %>
-          </div>
+          <%= render "box", index: index %>
         <% end %>
       </div>
     <% end %>
   <div>
 </div>
+
+<% 3.times do |row| %>
+  <% 3.times do |col| %>
+    <% index = row * 3 + col %>
+    <%= render "modal_question", index: index %>
+  <% end %>
+<% end %>
