@@ -1,13 +1,25 @@
-<div class="modal fade js-modal-question" data-index="<%= index %>" role="dialog">
+<div class="modal modal-question fade js-modal-question" data-index="<%= index %>" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Ô chữ số <%= index + 1 %></h4>
       </div>
+
       <div class="modal-body">
-        <p>Some text in the modal.</p>
+        <%= image_tag "questions/#{'%02d' % index}.jpg" %>
+
+        <div class="answer-boxes">
+          <div class="answer-boxes-details">
+            <% answer.length.times do |i| %>
+              <div class="answer-box" contenteditable="true">
+                <%= answer[i] %>
+              </div>
+            <% end%>
+          </div>
+        </div>
       </div>
+
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>

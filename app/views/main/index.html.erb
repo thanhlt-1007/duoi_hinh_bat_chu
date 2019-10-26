@@ -21,6 +21,6 @@
 <% 3.times do |row| %>
   <% 3.times do |col| %>
     <% index = row * 3 + col %>
-    <%= render "modal_question", index: index %>
+    <%= render "modal_question", index: index, answer: @answers[index] %>
   <% end %>
 <% end %>
